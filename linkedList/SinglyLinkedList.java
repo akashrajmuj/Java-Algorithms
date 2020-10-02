@@ -45,7 +45,27 @@ public class SinglyLinkedList
 		if(this.tail==null)
 			this.tail=node;
 	}
-
+	public void DeleteHead()
+	{
+	if(this.head != null)
+		 head=head.next();
+	}
+	public DeleteTail()
+	{
+		Node ptr=head;
+		if(ptr==null || ptr.next==null)
+		{
+			free(ptr);
+		}
+		else
+		{
+		while(ptr.next.next != null)
+		ptr=ptr.next;
+			
+		ptr.next=null;
+		free(ptr);
+		}
+	}
 	Boolean isEmpty()
 	{
 		return head==null;	
@@ -72,6 +92,9 @@ public class SinglyLinkedList
 		System.out.println("Size of Linked List is: "+l.size);
 		l.InsertAtTail(3);
 		l.displayNodes();
+		l.DeleteHead();
+		l.DeleteTail();
+		
 	}
 
 }
